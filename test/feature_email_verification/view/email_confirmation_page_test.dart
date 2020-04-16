@@ -31,18 +31,6 @@ void main() {
       verify(_mockRouter.replaceWithEmailVerificationSuccessPage()).called(1);
     });
 
-    testWidgets('EmailConfirmationAlreadyVerifiedEvent', (widgetTester) async {
-      await _givenSubjectWidgetWithInitialBlocState(widgetTester,
-          customerState: CustomerUninitializedState());
-
-      await _mockEmailConfirmationBloc.testNewEvent(
-        event: EmailConfirmationAlreadyVerifiedEvent(),
-        widgetTester: widgetTester,
-      );
-
-      verify(_mockRouter.pushRootSetPhoneNumberPage()).called(1);
-    });
-
     testWidgets('EmailConfirmationInvalidCodeEvent', (widgetTester) async {
       await _givenSubjectWidgetWithInitialBlocState(widgetTester,
           customerState:

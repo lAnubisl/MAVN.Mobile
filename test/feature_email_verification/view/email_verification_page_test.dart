@@ -47,18 +47,6 @@ void main() {
       verify(_mockRouter.replaceWithEmailVerificationSuccessPage()).called(1);
     });
 
-    testWidgets('already verified error', (widgetTester) async {
-      await _givenSubjectWidgetWithInitialBlocState(widgetTester,
-          state: CustomerUninitializedState());
-
-      await _mockEmailVerificationBloc.testNewEvent(
-        event: EmailVerificationAlreadyVerifiedEvent(),
-        widgetTester: widgetTester,
-      );
-
-      verify(_mockRouter.pushRootSetPhoneNumberPage()).called(1);
-    });
-
     testWidgets('stored code triggers dynamic link routing',
         (widgetTester) async {
       await _givenSubjectWidgetWithInitialBlocState(widgetTester,

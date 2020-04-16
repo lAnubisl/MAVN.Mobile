@@ -83,20 +83,6 @@ void main() {
           ));
     });
 
-    test('verifyPhone', () async {
-      _when(
-        hasBeenPreviouslyLoggedIn: true,
-        userShouldSeeOnboarding: false,
-        isUserVerified: false,
-        customer: TestConstants.nonVerifiedPhoneCustomer,
-      );
-
-      final target = await subject.execute();
-
-      expect(target,
-          const RouteAuthenticationTarget(RouteAuthenticationPage.verifyPhone));
-    });
-
     test('biometricAgreement', () async {
       _when(
         hasBeenPreviouslyLoggedIn: true,

@@ -14,7 +14,7 @@ class EmailVerificationSuccessPage extends HookWidget {
       title: LocalizedStrings.emailVerificationSuccessTitle,
       details: LocalizedStrings.emailVerificationSuccessDetails,
       buttonText: LocalizedStrings.nextPageButton,
-      onButtonTap: router.pushRootSetPhoneNumberPage,
+      onButtonTap: router.pushRootBottomBarPage,
       endIcon: SvgAssets.success,
       hasBackButton: false,
       hasLogo: true,

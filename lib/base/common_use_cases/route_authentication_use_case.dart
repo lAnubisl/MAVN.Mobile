@@ -60,14 +60,6 @@ class RouteAuthenticationUseCase {
           data: verificationState.data,
         );
       }
-
-      if (verificationState.status ==
-          _RouteAuthenticationStatus.phoneNumberNeedsVerification) {
-        return RouteAuthenticationTarget(
-          RouteAuthenticationPage.verifyPhone,
-          data: verificationState.data,
-        );
-      }
     }
 
     final hasPin = await _hasPinUseCase.execute();
@@ -108,12 +100,6 @@ class RouteAuthenticationUseCase {
           data: customer.email,
         );
       }
-
-      if (!customer.isPhoneNumberVerified) {
-        return _VerificationFlowState(
-            _RouteAuthenticationStatus.phoneNumberNeedsVerification,
-            data: customer.phoneNumberWithCode);
-      }
     } catch (_) {
       return _VerificationFlowState(_RouteAuthenticationStatus.notLoggedIn);
     }
@@ -141,7 +127,6 @@ enum _RouteAuthenticationStatus {
   notLoggedIn,
   verified,
   emailNeedsVerification,
-  phoneNumberNeedsVerification
 }
 
 class _VerificationFlowState {
@@ -161,7 +146,6 @@ enum RouteAuthenticationPage {
   biometricAgreement,
   createPin,
   signInWithPin,
-  verifyPhone,
   verifyEmail,
   home,
 }

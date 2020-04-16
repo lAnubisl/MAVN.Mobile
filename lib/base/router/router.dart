@@ -220,16 +220,6 @@ class Router extends BaseRouter {
         pageName: RouterPageName.emailVerificationSuccessPage);
   }
 
-  Future<void> pushRootSetPhoneNumberPage() async {
-    await pushRootPage(RouterPageFactory.getSetPhoneNumberPage(),
-        pageName: RouterPageName.setPhoneNumberPage);
-  }
-
-  Future<void> pushPhoneCodeVerificationPage() async {
-    await pushPage(RouterPageFactory.getPhoneNumberVerificationPage(),
-        pageName: RouterPageName.phoneNumberVerificationPage);
-  }
-
   //endregion Registration
 
   //region Password
@@ -286,9 +276,6 @@ class Router extends BaseRouter {
         break;
       case RouteAuthenticationPage.signInWithPin:
         await pushRootSignInPage();
-        break;
-      case RouteAuthenticationPage.verifyPhone:
-        await pushRootSetPhoneNumberPage();
         break;
       case RouteAuthenticationPage.verifyEmail:
         await pushRootEmailVerificationPage(

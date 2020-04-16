@@ -67,9 +67,6 @@ import 'package:lykke_mobile_mavn/feature_payment_request_list/di/partner_paymen
 import 'package:lykke_mobile_mavn/feature_payment_request_list/view/payment_request_list_page.dart';
 import 'package:lykke_mobile_mavn/feature_personal_details/di/personal_details_module.dart';
 import 'package:lykke_mobile_mavn/feature_personal_details/view/personal_details_page.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/di/phone_number_verification_module.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/view/phone_number_verification_page.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/view/set_phone_number_page.dart';
 import 'package:lykke_mobile_mavn/feature_pin/di/pin_module.dart';
 import 'package:lykke_mobile_mavn/feature_pin/view/pin_confirm_page.dart';
 import 'package:lykke_mobile_mavn/feature_pin/view/pin_create_page.dart';
@@ -218,19 +215,6 @@ class RouterPageFactory {
 
   static Widget getEmailVerificationSuccessPage() =>
       EmailVerificationSuccessPage();
-
-  static Widget getSetPhoneNumberPage() => ModuleProvider(
-        module: PhoneNumberVerificationModule(),
-        child: SetPhoneNumberPage(),
-      );
-
-  static Widget getPhoneNumberVerificationPage() => MultiProvider(
-        providers: [
-          ModuleProvider(module: TickerModule()),
-          ModuleProvider(module: PhoneNumberVerificationModule())
-        ],
-        child: PhoneNumberVerificationPage(),
-      );
 
   //endregion Registration
 

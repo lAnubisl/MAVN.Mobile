@@ -49,8 +49,7 @@ class EmailConfirmationPage extends HookWidget {
         emailVerificationAnalyticsManager.emailVerificationSuccessful();
         router.replaceWithEmailVerificationSuccessPage();
       } else if (event is EmailConfirmationAlreadyVerifiedEvent) {
-        emailVerificationAnalyticsManager.emailVerificationSuccessful();
-        router.pushRootSetPhoneNumberPage();
+        router.pushRootBottomBarPage();
       } else if (event is EmailConfirmationInvalidCodeEvent) {
         if (customerBlocState is CustomerLoadedState) {
           confirmationBloc.removeVerificationCode().then((_) {

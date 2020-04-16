@@ -62,7 +62,7 @@ class EmailVerificationPage extends HookWidget with DynamicLinkManagerMixin {
 
     void proceedSilently() {
       emailVerificationAnalyticsManager.emailVerificationSuccessful();
-      router.pushRootSetPhoneNumberPage();
+      router.pushRootBottomBarPage();
     }
 
     void showSuccessPage() {

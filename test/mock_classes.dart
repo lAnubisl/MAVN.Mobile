@@ -141,14 +141,6 @@ import 'package:lykke_mobile_mavn/feature_payment_request_list/di/partner_paymen
 import 'package:lykke_mobile_mavn/feature_personal_details/bloc/personal_details_bloc.dart';
 import 'package:lykke_mobile_mavn/feature_personal_details/bloc/personal_details_bloc_output.dart';
 import 'package:lykke_mobile_mavn/feature_personal_details/di/personal_details_module.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/analytics/phone_number_verification_analytics_manager.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/bloc/phone_number_verification_bloc.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/bloc/phone_number_verification_bloc_output.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/bloc/phone_verification_generation_bloc.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/bloc/phone_verification_generation_bloc_output.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/bloc/set_phone_number_bloc.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/bloc/set_phone_number_bloc_output.dart';
-import 'package:lykke_mobile_mavn/feature_phone_number_verification/di/phone_number_verification_module.dart';
 import 'package:lykke_mobile_mavn/feature_pin/bloc/pin_forgot_bloc.dart';
 import 'package:lykke_mobile_mavn/feature_pin/di/pin_module.dart';
 import 'package:lykke_mobile_mavn/feature_pin/use_case/get_biometric_type_use_case.dart';
@@ -313,9 +305,6 @@ class MockChangePasswordAnalyticsManager extends Mock
 class MockEmailVerificationAnalyticsManager extends Mock
     implements EmailVerificationAnalyticsManager {}
 
-class MockPhoneNumberVerificationAnalyticsManager extends Mock
-    implements PhoneNumberVerificationAnalyticsManager {}
-
 class MockWelcomeAnalyticsManager extends Mock
     implements WelcomeAnalyticsManager {}
 
@@ -368,9 +357,6 @@ class MockPasswordValidationModule extends Mock
     implements PasswordValidationModule {}
 
 class MockHotelReferralModule extends Mock implements HotelReferralModule {}
-
-class MockPhoneNumberVerificationModule extends Mock
-    implements PhoneNumberVerificationModule {}
 
 class MockPinModule extends Mock implements PinModule {}
 
@@ -612,27 +598,6 @@ class MockTimerBloc extends MockBloc<TimerState> implements TimerBloc {
 class MockPasswordValidationBloc extends MockBloc<PasswordValidationState>
     implements PasswordValidationBloc {
   MockPasswordValidationBloc(PasswordValidationState initialState)
-      : super(initialState);
-}
-
-class MockSetPhoneNumberBloc extends MockBloc<SetPhoneNumberState>
-    implements SetPhoneNumberBloc {
-  MockSetPhoneNumberBloc(SetPhoneNumberState initialState)
-      : super(initialState);
-}
-
-class MockPhoneNumberVerificationBloc
-    extends MockBloc<PhoneNumberVerificationState>
-    implements PhoneNumberVerificationBloc {
-  MockPhoneNumberVerificationBloc(PhoneNumberVerificationState initialState)
-      : super(initialState);
-}
-
-class MockPhoneVerificationGenerationBloc
-    extends MockBloc<PhoneVerificationGenerationState>
-    implements PhoneVerificationGenerationBloc {
-  MockPhoneVerificationGenerationBloc(
-      PhoneVerificationGenerationState initialState)
       : super(initialState);
 }
 
